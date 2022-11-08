@@ -4,12 +4,20 @@ import CategoriesScreen from "./screens/CategoriesScreen";
 
 //navigation imports
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import MealsOverviewScreen from "./screens/MealsOverviewScreen";
+
+const Stack = createStackNavigator();
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
       <NavigationContainer>
-        <CategoriesScreen />
+        <Stack.Navigator>
+          <Stack.Screen name="CategoriesScreen" component={CategoriesScreen} />
+          <Stack.Screen name="MealsOverviewScreen" component={MealsOverviewScreen} />
+
+        </Stack.Navigator>
       </NavigationContainer>
     </>
   );
