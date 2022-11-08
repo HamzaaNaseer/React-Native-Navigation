@@ -3,11 +3,12 @@ import CategoryGridTile from "../components/CategoryGridTile";
 import { CATEGORIES } from "../data/dummy-data";
 
 const CategoriesScreen = ({ navigation }) => {
-  const pressHandler = () => {
-    navigation.navigate("MealsOverviewScreen");
-  };
-
   const renderCategoryItem = (itemData) => {
+    const pressHandler = () => {
+      navigation.navigate("MealsOverviewScreen", {
+        categoryId: itemData.item.id,
+      });
+    };
     return (
       <CategoryGridTile
         title={itemData.item.title}
